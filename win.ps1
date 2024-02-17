@@ -293,8 +293,7 @@ $window.FindName("StartButton").Add_Click({
                 $newProcess = new-object System.Diagnostics.ProcessStartInfo "cmd";
                 $newProcess.Arguments = "/c title Scanning System Files & sfc /scannow";
                 $newProcess.Verb = "runas";
-                $process = [System.Diagnostics.Process]::Start($newProcess);
-                $process.WaitForExit()
+                [System.Diagnostics.Process]::Start($newProcess);
             }
             elseif ($command -eq "Clear DNS Cache") {
                 $loglist.Items.Add("Clearing DNS Cache...") | Out-Null
