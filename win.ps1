@@ -38,7 +38,7 @@ Write-Host ""
 $xaml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="nublufy.github.io/win" ResizeMode="NoResize" Height="400" Width="570">
+        Title="nibfy.github.io/win" ResizeMode="NoResize" Height="400" Width="570">
    <Window.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
