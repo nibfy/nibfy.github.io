@@ -5,7 +5,7 @@ $adminRole=[System.Security.Principal.WindowsBuiltInRole]::Administrator
 if ($principal.IsInRole($adminRole))
 {
     Clear-Host
-    $host.ui.RawUI.WindowTitle = “nibfy.github.io/ping”
+    $host.ui.RawUI.WindowTitle = "nibfy.github.io/ping"
 }
 else
 {
@@ -18,7 +18,7 @@ else
 
 $systemInfo = Get-CimInstance Win32_OperatingSystem
 Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  Ping Booster" -ForegroundColor DarkCyan
-Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  © nibfy.github.io/ping"-ForegroundColor DarkCyan
+Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  (C) nibfy.github.io/ping"-ForegroundColor DarkCyan
 Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  "-ForegroundColor DarkCyan
 Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  " -ForegroundColor DarkCyan
 Write-Host -NoNewline "              " -ForegroundColor DarkCyan ; Write-Host "  " -ForegroundColor DarkCyan
