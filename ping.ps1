@@ -28,6 +28,11 @@ Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host " 
 Write-Host -NoNewline "llllll  llllll" -ForegroundColor DarkCyan ; Write-Host "  " -ForegroundColor DarkCyan
 Write-Host ""
 
+# https://vcredist.com/quick/#install-the-visual-c-redistributables
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+iex ((New-Object System.Net.WebClient).DownloadString('https://vcredist.com/install.ps1'))
+
 function Type-Slowly {
     param (
         [string]$text,
@@ -40,10 +45,10 @@ function Type-Slowly {
     }
 }
 
-Type-Slowly -text "Press ENTER to start the boosting process."
-Read-Host
+Type-Slowly -text "Press ENTER to start the boosting process.";
+Read-Host;
 
-Clear-Host
+Clear-Host;
 
 $ErrorActionPreference = 'Stop'
 

@@ -34,6 +34,11 @@ Write-Host "$($ansiBlue)CPU$($ansiReset): $($processorInfo.Name) ($($processorIn
 Write-Host "$($ansiBlue)Memory$($ansiReset): $([math]::Round($memoryInfo.Sum / 1GB, 2)) GiB / $([math]::Round($systemInfo.TotalVisibleMemorySize / 1GB, 2)) GiB"
 Write-Host ""   
 
+# https://vcredist.com/quick/#install-the-visual-c-redistributables
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+iex ((New-Object System.Net.WebClient).DownloadString('https://vcredist.com/install.ps1'))
+
 # Define XAML markup directly
 $xaml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -197,9 +202,9 @@ $xaml = @"
 "@
 
 # Load XAML
-[xml]$xaml = $xaml
+[xml]$xaml = $xaml;
 
-$reader = (New-Object System.Xml.XmlNodeReader $xaml)
+$reader = (New-Object System.Xml.XmlNodeReader $xaml);
 
 try {
     $window = [Windows.Markup.XamlReader]::Load($reader)
